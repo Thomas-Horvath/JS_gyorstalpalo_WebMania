@@ -9,19 +9,42 @@
     <meta name="description" content="javascript webshop template">
     <title>JS gyorstalpaló - Hangszerbolt webshop</title>
 
-    <!--  FONT AWESOME -->
-    <script src="https://kit.fontawesome.com/156d16ec42.js" crossorigin="anonymous"></script>
-
     <!--  GOOGLE FONTS -->
     <link rel="stylesheet" href="./style/font.css">
 
+    <!--  FOUNDATION ICON -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.min.css"
+        integrity="sha512-kDmbIQZ10fxeKP5NSt3+tz77HO42IJiS+YPIirOIKTdokl4LtuXYo3NNvq9mTAF+rzdV1plp0sm9E6nvtVpnFQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <!--  STYLESHEET -->
     <link rel="stylesheet" href="./style/style.css">
+
 </head>
 
 <body>
-  
+    <header>
+        <i class="fi-align-justify" id="hamburgerMenu"></i>
+        <i class="fi-shopping-cart" id="cart-icon"></i>
+    </header>
 
+    <nav id="nav">
+        <ul>
+            <li><a href="#"><i class="fi-home"></i> Kezdőlap</a></li>
+            <li><a href="#"><i class="fi-target"></i> Szolgáltatások</a></li>
+            <li><a href="#"><i class="fi-at-sign"></i> Kapcsolat</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h1>EGS - HangszerCenter</h1>
+        <section id="products"></section>
+    </main>
+
+    <aside id="cart-content">
+        <h1>Kosár</h1>
+        <ul id="cart-items"></ul>
+    </aside>
 
 
 

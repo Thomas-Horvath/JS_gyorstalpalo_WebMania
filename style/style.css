@@ -5,7 +5,7 @@
 }
 
 :root {
-    --color-black : #0c0c0c;
+    --color-black: #0c0c0c;
     --color-gray: #454b57;
     --color-dark-gray: #29303f;
     --color-red: #f0003c;
@@ -15,6 +15,75 @@
 body {
     font-family: 'Quicksand', sans-serif;
     background: var(--color-black);
-    color: var(--color-white);   
-  }
+    color: var(--color-white);
+}
 
+ul {
+    list-style-type: none;
+    padding: 0 1.5rem 0 1rem;
+    line-height: 3rem;
+}
+
+li {
+    white-space: nowrap;
+}
+
+i {
+    margin-right: 1rem;
+}
+
+h1 {
+    font-size: 1.8rem;
+}
+
+header {
+    margin-bottom: 1rem;
+    display: flex;
+    height: 4.5rem;
+    justify-content: space-between;
+}
+
+
+
+#hamburgerMenu {
+    margin: 1rem 0 0 5rem;
+    color: var(--color-white);
+    background: var(--color-dark-gray);
+    font-size: 1.8rem;
+    z-index: 2;
+    border-radius: 50%;
+    padding: 0.6rem 0.8rem 0.8rem 1.1rem;
+    width: 3.4rem;
+    transition: .4s ease;
+}
+#hamburgerMenu:hover, nav a:hover{
+    color: var(--color-red);
+}
+
+
+nav {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    background: var(--color-dark-gray);
+    color: var(--color-white);
+    transform: translateX(-100%);
+    padding-top: 6rem;
+    transition: transform 350ms ease-in-out;
+}
+
+nav a {
+    color: var(--color-white);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.3rem;
+    transition: .4s ease;
+}
+
+main h1 {
+    margin: 0 1rem;
+}
+
+.menu-active {
+    transform: translateX(0);
+}
