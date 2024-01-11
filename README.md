@@ -1,0 +1,1 @@
+# WebMánia.cc - Javascript gyorstalpaló 

@@ -1,0 +1,20 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-black : #0c0c0c;
+    --color-gray: #454b57;
+    --color-dark-gray: #29303f;
+    --color-red: #f0003c;
+    --color-white: #fff;
+}
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    background: var(--color-black);
+    color: var(--color-white);   
+  }
+
