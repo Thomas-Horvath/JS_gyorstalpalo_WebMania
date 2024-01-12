@@ -79,9 +79,13 @@ nav a {
     font-size: 1.3rem;
     transition: .4s ease;
 }
+main {
+    text-align: center;
 
+}
 main h1 {
     margin: 0 1rem;
+    font-size: 3rem;
 }
 
 .menu-active {
