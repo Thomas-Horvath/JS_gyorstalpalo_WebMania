@@ -56,7 +56,9 @@ header {
     width: 3.4rem;
     transition: .4s ease;
 }
-#hamburgerMenu:hover, nav a:hover{
+
+#hamburgerMenu:hover,
+nav a:hover {
     color: var(--color-red);
 }
 
@@ -79,10 +81,12 @@ nav a {
     font-size: 1.3rem;
     transition: .4s ease;
 }
+
 main {
     text-align: center;
 
 }
+
 main h1 {
     margin: 0 1rem;
     font-size: 3rem;
@@ -90,4 +94,38 @@ main h1 {
 
 .menu-active {
     transform: translateX(0);
+}
+
+img {
+    width: 200px;
+}
+#products {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+}
+
+.products__card {
+    width: 300px;
+    padding: 0 1rem 1rem;
+    background: var(--color-gray);
+    border-radius: 20px;
+}
+
+.btn {
+    border: none;
+    background: var(--color-red);
+    color: var(--color-white);
+    padding: .7rem 1.7rem;
+    font-size: 1.3rem;
+    font-weight: 700;
+    font-family: 'Quicksand', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    margin: 0 auto;
+}
+
+.btn i {
+    font-size: 2.4rem;
 }
