@@ -21,118 +21,129 @@ links.forEach((link) => {
 const guitars = [
     {
         id: 1,
-        brand: "Ibanez JEM Jr - Yellow",
+        brand: "Ibanez JEM Jr",
         subname: "Steve Vai sugnature model",
         desc: "American series",
-        picture: "../img/pic1",
+        picture: "pic1.jpg",
         price: 250000,
         inStock: true,
     },
     {
         id: 2,
-        name: "Fender Stratocaster",
-        subname: "ag-340",
+        brand: "Fender Startocaster",
+        subname: "Steve Vai sugnature model",
         desc: "American series",
-        picture: "../img/pic2",
+        picture: "pic1.jpg",
         price: 250000,
         inStock: true,
     },
     {
         id: 3,
-        name: "Fender Stratocaster",
-        subname: "ag-340",
+        brand: "Gibson Les Paul",
+        subname: "Steve Vai sugnature model",
         desc: "American series",
-        picture: "../img/pic3",
+        picture: "pic1.jpg",
         price: 250000,
         inStock: true,
     },
     {
         id: 4,
-        name: "Fender Stratocaster",
-        subname: "ag-340",
+        brand: "Gibson SG",
+        subname: "Steve Vai sugnature model",
         desc: "American series",
-        picture: "../img/pic4",
+        picture: "pic1.jpg",
         price: 250000,
         inStock: true,
     },
     {
         id: 5,
-        name: "Fender Stratocaster",
-        subname: "ag-340",
+        brand: "Ibanez JS2000",
+        subname: "Steve Vai sugnature model",
         desc: "American series",
-        picture: "../img/pic5",
+        picture: "pic1.jpg",
         price: 250000,
         inStock: true,
     },
     {
         id: 6,
-        name: "Fender Stratocaster",
-        subname: "ag-340",
+        brand: "Cort EVL K4",
+        subname: "Steve Vai sugnature model",
         desc: "American series",
-        picture: "../img/pic6",
+        picture: "pic1.jpg",
         price: 250000,
         inStock: true,
     },
     {
         id: 7,
-        name: "Fender Stratocaster",
-        subname: "ag-340",
+        brand: "Cort EVL K4",
+        subname: "Steve Vai sugnature model",
         desc: "American series",
-        picture: "../img/pic7",
+        picture: "pic1.jpg",
         price: 250000,
         inStock: true,
     },
     {
         id: 8,
-        name: "Fender Stratocaster",
-        subname: "ag-340",
+        brand: "Cort EVL K4",
+        subname: "Steve Vai sugnature model",
         desc: "American series",
-        picture: "../img/pic8",
+        picture: "pic1.jpg",
         price: 250000,
         inStock: true,
     },
     {
         id: 9,
-        name: "Fender Stratocaster",
-        subname: "ag-340",
+        brand: "Cort EVL K4",
+        subname: "Steve Vai sugnature model",
         desc: "American series",
-        picture: "../img/pic9",
+        picture: "pic1.jpg",
         price: 250000,
         inStock: true,
     },
     {
         id: 10,
-        name: "Fender Stratocaster",
-        subname: "ag-340",
+        brand: "Cort EVL K4",
+        subname: "Steve Vai sugnature model",
         desc: "American series",
-        picture: "../img/pic10",
+        picture: "pic1.jpg",
         price: 250000,
-        inStock: false,
+        inStock: true,
     },
     {
         id: 11,
-        name: "Fender Stratocaster",
-        subname: "ag-340",
+        brand: "Cort EVL K4",
+        subname: "Steve Vai sugnature model",
         desc: "American series",
-        picture: "../img/pic11",
+        picture: "pic1.jpg",
         price: 250000,
         inStock: true,
     },
     {
         id: 12,
-        name: "Fender Stratocaster",
-        subname: "ag-340",
+        brand: "Cort EVL K4",
+        subname: "Steve Vai sugnature model",
         desc: "American series",
-        picture: "../img/pic12",
+        picture: "pic1.jpg",
         price: 250000,
         inStock: true,
-    }
+    },
+   
 ]
+
+
 
 /* render function */
 const produtctSection = document.getElementById('products');
 
-/* produtctSection.innerHTML = `
-<div><h2>${guitars[0].name}</h2>
-</div>
-` */
+
+guitars.forEach(guitar => {
+    produtctSection.innerHTML += `
+    <div class="products__card">
+    <img src="./img/${guitar.picture}" alt="gitár kép">
+    <h2>${guitar.brand}</h2>
+    <p>${guitar.subname}</p>
+    <h3>${guitar.price} Ft</h3>
+    <a href="#" class="btn"><i class="fi-shopping-cart" id="cart-icon"></i>Kosárba</a>
+    </div>
+    `
+})

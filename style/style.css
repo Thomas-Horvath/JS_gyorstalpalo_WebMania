@@ -41,6 +41,8 @@ header {
     display: flex;
     height: 4.5rem;
     justify-content: space-between;
+    position: fixed;
+    z-index: 44444;
 }
 
 
@@ -64,9 +66,9 @@ nav a:hover {
 
 
 nav {
-    position: absolute;
+    position: fixed;
     top: 0;
-    height: 100%;
+    height: 100vh;
     background: var(--color-dark-gray);
     color: var(--color-white);
     transform: translateX(-100%);
@@ -84,7 +86,8 @@ nav a {
 
 main {
     text-align: center;
-
+height: 1000px;
+padding-top: 3rem;
 }
 
 main h1 {
@@ -100,30 +103,57 @@ img {
     width: 200px;
 }
 #products {
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
+    display: flex;
+    justify-content: center;
+    margin: 3rem 0;
+ flex-wrap: wrap;
+    align-items: center;
 }
 
 .products__card {
     width: 300px;
-    padding: 0 1rem 1rem;
     background: var(--color-gray);
-    border-radius: 20px;
+    border-radius: 5px;
+    overflow: hidden;margin: 2rem;
+   
 }
-
+.products__card h2 {
+    color: var(--color-white);
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+}
+.products__card p {
+    margin-bottom: 1rem;
+}
+.products__card h3 {
+    margin-bottom: 1rem;
+}
+.products__card img {
+    width: 100%;
+}
 .btn {
     border: none;
     background: var(--color-red);
     color: var(--color-white);
-    padding: .7rem 1.7rem;
+    padding: .3rem 1.2rem;
     font-size: 1.3rem;
     font-weight: 700;
     font-family: 'Quicksand', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 10px;
+    border-radius: 5px;
     margin: 0 auto;
+    text-decoration: none;
+    width: 70%;
+    margin-bottom: 2rem;
+    transition: .3s ease;
+}
+.btn:hover {
+    background-color: #f0003caa;
+}
+.btn:active {
+    transform: scale(.9);
 }
 
 .btn i {
