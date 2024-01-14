@@ -11,7 +11,9 @@
     --color-red: #f0003c;
     --color-white: #fff;
 }
-
+html {
+    scroll-behavior: smooth;
+}
 body {
     font-family: 'Quicksand', sans-serif;
     background: var(--color-black);
@@ -111,7 +113,7 @@ img {
 }
 
 .products__card {
-    width: 300px;
+    width: 270px;
     background: var(--color-gray);
     border-radius: 5px;
     overflow: hidden;margin: 2rem;
