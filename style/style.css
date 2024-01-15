@@ -43,13 +43,14 @@ header {
     display: flex;
     height: 4.5rem;
     justify-content: space-between;
-    position: fixed;
+    position: relative;
     z-index: 44444;
+    width: 100%;
 }
 
 
 
-#hamburgerMenu {
+#hamburgerMenu, #cart-icon {
     margin: 1rem 0 0 5rem;
     color: var(--color-white);
     background: var(--color-dark-gray);
@@ -59,9 +60,14 @@ header {
     padding: 0.6rem 0.8rem 0.8rem 1.1rem;
     width: 3.4rem;
     transition: .4s ease;
+    cursor: pointer;
+}
+#cart-icon {
+    margin-right: 5rem;
+    padding-left: 0.9rem;
 }
 
-#hamburgerMenu:hover,
+#hamburgerMenu:hover, #cart-icon:hover,
 nav a:hover {
     color: var(--color-red);
 }
@@ -89,7 +95,7 @@ nav a {
 main {
     text-align: center;
 height: 1000px;
-padding-top: 3rem;
+
 }
 
 main h1 {

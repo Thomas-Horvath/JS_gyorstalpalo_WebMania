@@ -84,7 +84,7 @@ const guitars = [
     },
     {
         id: 8,
-        brand: "Ibanez JIVAJR",
+        brand: "Ibanez JIVA JR",
         subname: "Nita Strauss sugnature model",
         desc: "American series",
         picture: "pic8.jpg",
@@ -106,7 +106,22 @@ guitars.forEach(guitar => {
     <h2>${guitar.brand}</h2>
     <p>${guitar.subname}</p>
     <h3>${guitar.price} Ft</h3>
-    <a href="#" class="btn"><i class="fi-shopping-cart" id="cart-icon"></i>Kosárba</a>
+    <a id=${guitar.id} class="btn addToCart"><i class="fi-shopping-cart" id="card__cart-icon"></i>Kosárba</a>
     </div>
     `
 })
+
+/*  cart management */
+const cart = {};
+
+const addToCartButtons = document.getElementsByClassName('addToCart');
+const buttonsCount = addToCartButtons.length;
+for (let i = 0; i < buttonsCount; i++) {
+    addToCartButtons[i].addEventListener('click', (event) => {
+        if (cart[event.target.id] === undefined) {
+            cart[event.target.id] = 1;
+        } else  {
+            cart[event.target.id]++;
+        }
+    })
+}
