@@ -44,7 +44,7 @@ header {
     height: 4.5rem;
     justify-content: space-between;
     position: relative;
-    z-index: 44444;
+    z-index: 4;
     width: 100%;
 }
 
@@ -59,12 +59,18 @@ header {
     border-radius: 50%;
     padding: 0.6rem 0.8rem 0.8rem 1.1rem;
     width: 3.4rem;
-    transition: .4s ease;
+
     cursor: pointer;
+}
+#hamburgerMenu {
+    transition: .4s ease;
 }
 #cart-icon {
     margin-right: 5rem;
     padding-left: 0.9rem;
+}
+#cart-icon.fi-arrow-up {
+    padding-left: 1.3rem;
 }
 
 #hamburgerMenu:hover, #cart-icon:hover,
@@ -166,4 +172,21 @@ img {
 
 .btn i {
     font-size: 2.4rem;
+}
+
+
+#cart-content {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    background-color: var(--color-dark-gray);
+    color: var(--color-white);
+    width: 40%;
+    padding: 3.8rem 1rem;
+    transform: translateY(-140vh);
+    transition:  .4s ease;
+}
+#cart-content.active {
+    transform: translateY(0);
 }

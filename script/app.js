@@ -34,7 +34,7 @@ const guitars = [
         subname: "Black",
         desc: "American series",
         picture: "pic2.jpg",
-        price: 250000,
+        price: 134500,
         inStock: true,
     },
     {
@@ -43,7 +43,7 @@ const guitars = [
         subname: "Standard",
         desc: "American series",
         picture: "pic3.jpg",
-        price: 250000,
+        price: 670000,
         inStock: true,
     },
     {
@@ -52,7 +52,7 @@ const guitars = [
         subname: "Standard",
         desc: "American series",
         picture: "pic4.jpg",
-        price: 250000,
+        price: 400000,
         inStock: true,
     },
     {
@@ -61,7 +61,7 @@ const guitars = [
         subname: "Steve Vai Signature Pia",
         desc: "American series",
         picture: "pic5.jpg",
-        price: 250000,
+        price: 350000,
         inStock: true,
     },
     {
@@ -70,7 +70,7 @@ const guitars = [
         subname: "Joe Satriani sugnature model",
         desc: "American series",
         picture: "pic6.jpg",
-        price: 250000,
+        price: 987000,
         inStock: true,
     },
     {
@@ -79,7 +79,7 @@ const guitars = [
         subname: "Paul Stanley sugnature model",
         desc: "American series",
         picture: "pic7.jpg",
-        price: 250000,
+        price: 1235000,
         inStock: true,
     },
     {
@@ -88,7 +88,7 @@ const guitars = [
         subname: "Nita Strauss sugnature model",
         desc: "American series",
         picture: "pic8.jpg",
-        price: 250000,
+        price: 300000,
         inStock: true,
     },
 ]
@@ -112,11 +112,13 @@ guitars.forEach(guitar => {
 })
 
 /*  cart management */
+
 const cart = {};
 
 const addToCartButtons = document.getElementsByClassName('addToCart');
 const buttonsCount = addToCartButtons.length;
 for (let i = 0; i < buttonsCount; i++) {
+   
     addToCartButtons[i].addEventListener('click', (event) => {
         if (cart[event.target.id] === undefined) {
             cart[event.target.id] = 1;
@@ -125,3 +127,24 @@ for (let i = 0; i < buttonsCount; i++) {
         }
     })
 }
+
+/*  display cart and products  */
+const cartIcon = document.getElementById('cart-icon');
+const cartContent = document.getElementById('cart-content');
+const cartItems = document.getElementById('cart-items');
+
+cartIcon.addEventListener('click', ()=> {
+    cartContent.classList.toggle('active');
+    cartIcon.classList.toggle('fi-shopping-cart');
+    cartIcon.classList.toggle('fi-arrow-up');
+
+    for (const id in cart) {
+        const currentProduct = guitars.find(guitar => guitar.id == id);
+        cartItems.innerHTML +=`<li>
+        ${cart[id]} db -
+        ${currentProduct.brand} -
+        ${currentProduct.price} Ft/db
+        </li>`
+    
+    }
+})
