@@ -162,6 +162,7 @@ img {
     width: 70%;
     margin-bottom: 2rem;
     transition: .3s ease;
+    user-select: none;
 }
 .btn:hover {
     background-color: #f0003caa;
@@ -186,7 +187,17 @@ img {
     padding: 3.8rem 1rem;
     transform: translateY(-140vh);
     transition:  .4s ease;
+    text-align: center;
 }
 #cart-content.active {
     transform: translateY(0);
+}
+#cart-content h1 {
+    margin-bottom: 3rem;
+    font-size: 3rem;
+}
+
+#cart-content li {
+    font-size: 1.5rem;
+    font-weight: 600;
 }

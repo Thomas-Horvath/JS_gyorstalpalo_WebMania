@@ -118,11 +118,11 @@ const cart = {};
 const addToCartButtons = document.getElementsByClassName('addToCart');
 const buttonsCount = addToCartButtons.length;
 for (let i = 0; i < buttonsCount; i++) {
-   
+
     addToCartButtons[i].addEventListener('click', (event) => {
         if (cart[event.target.id] === undefined) {
             cart[event.target.id] = 1;
-        } else  {
+        } else {
             cart[event.target.id]++;
         }
     })
@@ -132,19 +132,25 @@ for (let i = 0; i < buttonsCount; i++) {
 const cartIcon = document.getElementById('cart-icon');
 const cartContent = document.getElementById('cart-content');
 const cartItems = document.getElementById('cart-items');
+let total = 0;
 
-cartIcon.addEventListener('click', ()=> {
+cartIcon.addEventListener('click', () => {
     cartContent.classList.toggle('active');
     cartIcon.classList.toggle('fi-shopping-cart');
     cartIcon.classList.toggle('fi-arrow-up');
 
+    cartItems.innerHTML = '';
+
     for (const id in cart) {
         const currentProduct = guitars.find(guitar => guitar.id == id);
-        cartItems.innerHTML +=`<li>
+        cartItems.innerHTML += `<li>
         ${cart[id]} db -
         ${currentProduct.brand} -
         ${currentProduct.price} Ft/db
         </li>`
-    
+
+        total += currentProduct.price * cart[id];
     }
+    cartItems.innerHTML += `<li>Összesen: ${total} Ft</li>`;
+
 })
