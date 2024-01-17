@@ -164,10 +164,22 @@ img {
     transition: .3s ease;
     user-select: none;
 }
+.cart-btn {
+    border: none;
+    background: var(--color-red);
+    color: var(--color-white);
+    padding: .5rem;
+    width: 2.5rem;
+    margin: 0 .7rem;
+    border-radius: 5px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    transition: .3s ease;
+}
 .btn:hover {
     background-color: #f0003caa;
 }
-.btn:active {
+.btn:active, .cart-btn:active {
     transform: scale(.9);
 }
 
@@ -198,6 +210,13 @@ img {
 }
 
 #cart-content li {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: 600;
+    margin-top: 1rem;
+    display: flex;
+  
+}
+#cart-content li:last-child {
+    margin-top: 5rem;
+    font-size: 2rem;
 }

@@ -115,17 +115,75 @@ guitars.forEach(guitar => {
 
 const cart = {};
 
+
+const addToCart = (event) => {
+    let target = event.target.dataset.id;
+    if (event.target.id) {
+        target = event.target.id;
+    }
+
+    if (event.target.classList.contains('minus')) {
+        // Ha a gomb egy "minus-btn" osztályú gomb, akkor csökkentjük a darabszámot
+        if (cart[target] !== undefined && cart[target] > 0) {
+            cart[target]--;
+        }
+    } else {
+        // Ha nem a "minus-btn" gombra kattintottak, akkor növeljük a darabszámot
+        if (cart[target] == undefined) {
+            cart[target] = 1;
+        } else {
+            cart[target]++;
+        }
+    }
+
+
+
+
+
+
+
+
+/* 
+    if (cart[target] == undefined) {
+        cart[target] = 1;
+    } else {
+      
+        cart[target]++;
+      
+    } */
+}
+
+const refreshCart = () => {
+
+    cartItems.innerHTML = '';
+    total = 0;
+
+    for (const id in cart) {
+        const currentProduct = guitars.find(guitar => guitar.id == id);
+        cartItems.innerHTML += `<li>
+        <button class='cart-btn' data-id='${currentProduct.id}'>+</button>
+        ${cart[id]} db 
+        <button  class='cart-btn minus' data-id='${currentProduct.id}'>-</button>
+        ${currentProduct.brand} -
+        ${currentProduct.price} Ft/db
+
+        </li>`
+
+        total += currentProduct.price * cart[id];
+    }
+    cartItems.innerHTML += `
+        
+        <li>Összesen: ${total} Ft</li>`;
+}
+
+
+
+
+
 const addToCartButtons = document.getElementsByClassName('addToCart');
 const buttonsCount = addToCartButtons.length;
 for (let i = 0; i < buttonsCount; i++) {
-
-    addToCartButtons[i].addEventListener('click', (event) => {
-        if (cart[event.target.id] === undefined) {
-            cart[event.target.id] = 1;
-        } else {
-            cart[event.target.id]++;
-        }
-    })
+    addToCartButtons[i].addEventListener('click', addToCart)
 }
 
 /*  display cart and products  */
@@ -139,18 +197,19 @@ cartIcon.addEventListener('click', () => {
     cartIcon.classList.toggle('fi-shopping-cart');
     cartIcon.classList.toggle('fi-arrow-up');
 
-    cartItems.innerHTML = '';
+    if (Object.keys(cart).length === 0) {
+        cartItems.innerHTML = '<h2>A kosarad üres</h2>'
+    } else {
 
-    for (const id in cart) {
-        const currentProduct = guitars.find(guitar => guitar.id == id);
-        cartItems.innerHTML += `<li>
-        ${cart[id]} db -
-        ${currentProduct.brand} -
-        ${currentProduct.price} Ft/db
-        </li>`
-
-        total += currentProduct.price * cart[id];
+        refreshCart()
     }
-    cartItems.innerHTML += `<li>Összesen: ${total} Ft</li>`;
 
 })
+
+
+
+
+cartItems.addEventListener('click', function (event) {
+    addToCart(event)
+    refreshCart()
+});
