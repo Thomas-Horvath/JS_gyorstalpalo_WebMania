@@ -143,14 +143,7 @@ const addToCart = (event) => {
 
 
 
-/* 
-    if (cart[target] == undefined) {
-        cart[target] = 1;
-    } else {
-      
-        cart[target]++;
-      
-    } */
+
 }
 
 const refreshCart = () => {
